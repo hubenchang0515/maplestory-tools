@@ -1,7 +1,7 @@
 import {BrowserRouter, Route} from 'react-router-dom'
 import MysteryBadgeCalculator from './tool/MysteryBadgeCalculator'
 
-const articleStype = {
+const articleStyle = {
     marginLeft: "300px",
     marginRight: "100px",
 }
@@ -35,15 +35,15 @@ function MainPage() {
                 })
             }
             </div>
-            <div className="ui masthead vertical segment" style={articleStype}>
+            <div className="ui masthead vertical segment" style={articleStyle}>
                 <BrowserRouter>
-                    {
-                        toolsList.map((item) => {
-                            return (
-                                <Route path={item.url} exact component={item.component}/>
-                            )
-                        })
-                    }
+                {
+                    toolsList.map((item) => {
+                        return (
+                            <Route path={item.url} exact component={item.component}/>
+                        )
+                    })
+                }
                 </BrowserRouter>
             </div>
         </div>
