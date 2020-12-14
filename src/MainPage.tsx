@@ -1,5 +1,6 @@
 import {BrowserRouter, Route} from 'react-router-dom'
 import MysteryBadgeCalculator from './tool/MysteryBadgeCalculator'
+import CharmChipSimulator from './tool/CharmChipSimulator'
 
 const articleStyle = {
     marginLeft: "300px",
@@ -19,6 +20,11 @@ const toolsList: ToolNode[] = [
         url: "/maplestory-tools/mystery-badge-calculator", 
         component: MysteryBadgeCalculator
     },
+    {
+        title: "咒语痕迹模拟器",
+        url: "/maplestory-tools/charm-chip-simulator", 
+        component: CharmChipSimulator
+    },
 ]
 
 function MainPage() {
@@ -26,9 +32,9 @@ function MainPage() {
         <div>
             <div className="ui sidebar inverted vertical menu visible">
             {
-                toolsList.map((item) => {
+                toolsList.map((item, index) => {
                     return (
-                        <a className="item" href={item.url}>
+                        <a key={index} className="item" href={item.url}>
                             {item.title}
                         </a>
                     )
@@ -38,9 +44,9 @@ function MainPage() {
             <div className="ui masthead vertical segment" style={articleStyle}>
                 <BrowserRouter>
                 {
-                    toolsList.map((item) => {
+                    toolsList.map((item, index) => {
                         return (
-                            <Route path={item.url} exact component={item.component}/>
+                            <Route key={index} path={item.url} exact component={item.component}/>
                         )
                     })
                 }

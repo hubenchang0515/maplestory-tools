@@ -1,4 +1,6 @@
-import React, { useEffect, useState } from 'react';
+// 神秘徽章计算器
+
+import React, { useEffect, useState } from 'react'
 import LabelInput from '../component/LabelInput'
 
 const globalMaxLevel:number = 20
@@ -21,7 +23,7 @@ function createRangeValidator(begin:number, end:number): (text:string) => boolea
     return validator
 }
 
-function MysteryBadgeCalculator() {
+function MysteryBadgeCalculator(): JSX.Element {
     const [level, setLevel] = useState(1)
     const [growth, setGrowth] = useState(0)
     const [need, setNeed] = useState(0)
@@ -47,7 +49,6 @@ function MysteryBadgeCalculator() {
         } else {
             setLevel(l)
         }
-        
     }
 
     const handleGrowthChanged = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -102,4 +103,4 @@ function MysteryBadgeCalculator() {
     );
 }
 
-export default MysteryBadgeCalculator;
+export default MysteryBadgeCalculator

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 
 interface LabelInputProps {
     label?: string,
@@ -40,4 +40,4 @@ function LabelInput(props:LabelInputProps): JSX.Element {
     )
 }
 
-export default LabelInput;
+export default LabelInput

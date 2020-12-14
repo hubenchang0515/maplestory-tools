@@ -14,6 +14,7 @@
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
+    "react-transition-group": "^4.4.1",
     "semantic-ui": "^2.4.2",
     "typescript": "^4.1.2",
     "web-vitals": "^0.2.4"
@@ -43,6 +44,9 @@
     ]
   },
   "devDependencies": {
-    "@types/react-router-dom": "^5.1.6"
+    "@types/jquery": "^3.5.5",
+    "@types/react-router-dom": "^5.1.6",
+    "@types/react-transition-group": "^4.4.0",
+    "@types/semantic-ui": "^2.2.7"
   }
 }
