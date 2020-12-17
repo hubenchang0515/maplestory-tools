@@ -1,27 +1,9 @@
 // 神秘徽章计算器
 
 import React, { useEffect, useState } from 'react'
-import LabelInput from '../component/LabelInput'
+import SpinBox from '../component/SpinBox'
 
 const globalMaxLevel:number = 20
-
-function isPositiveInteger(text:string): boolean {
-    let regexp = new RegExp("^\\d+$")
-    return regexp.test(text)
-}
-
-function isInRange(text:string, begin:number, end:number): boolean {
-    const value = Number(text)
-    return value >= begin && value <= end
-}
-
-function createRangeValidator(begin:number, end:number): (text:string) => boolean {
-    const validator = (text:string) => {
-        return isPositiveInteger(text) && isInRange(text, begin, end)
-    }
-
-    return validator
-}
 
 function MysteryBadgeCalculator(): JSX.Element {
     const [level, setLevel] = useState(1)
@@ -42,53 +24,49 @@ function MysteryBadgeCalculator(): JSX.Element {
         setNeed(n - growth)
     }, [level, growth])
 
-    const handleLevelChanged = (event: React.ChangeEvent<HTMLInputElement>) => {
-        const l = Number(event.target.value)
-        if(l === 0) {
+    const handleLevelChanged = (value: number) => {
+        if(value < 1) {
             setLevel(1)
+        } else if(value > globalMaxLevel) {
+            setLevel(globalMaxLevel)
         } else {
-            setLevel(l)
+            setLevel(value)
         }
     }
 
-    const handleGrowthChanged = (event: React.ChangeEvent<HTMLInputElement>) => {
-        const g = Number(event.target.value)
-        setGrowth(g)
+    const handleGrowthChanged = (value: number) => {
+        setGrowth(value <= maxGrowth ? value : maxGrowth)
     }
 
-    const handleGetPerDayChanged = (event: React.ChangeEvent<HTMLInputElement>) => {
-        const p = Number(event.target.value)
-        setPerDay(p)
+    const handleGetPerDayChanged = (value: number) => {
+        setPerDay(value)
     }
 
     return(
         <div>
             <h3 className="ui center aligned header">神秘徽章计算器</h3>
             <div className="ui container">
-                <LabelInput
+                <SpinBox
                     label="当前等级"
-                    placeholder="1 ~ 20"
                     className="fluid"
-                    type="number"
-                    validator={createRangeValidator(1, 20)}
                     onChange={handleLevelChanged}
+                    min={1}
+                    max={20}
                 />
                 <br/>
-                <LabelInput
+                <SpinBox
                     label="成长值"
-                    placeholder={"0 ~ " + maxGrowth}
                     className="fluid"
-                    type="number"
-                    validator={createRangeValidator(0, maxGrowth)}
                     onChange={handleGrowthChanged}
+                    min={0}
+                    max={maxGrowth}
                 />
                 <br/>
-                <LabelInput
+                <SpinBox
                     label="每日获取量"
                     className="fluid"
-                    type="number"
-                    validator={isPositiveInteger}
                     onChange={handleGetPerDayChanged}
+                    min={0}
                 />
                 <br/>
                 <div className="ui segment">

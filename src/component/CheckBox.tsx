@@ -17,6 +17,10 @@ function CheckBox(props: CheckBoxProps) {
 
     const [checked, setChecked] = useState(m_props.checked)
 
+    useEffect(() => {
+        setChecked(m_props.checked)
+    }, [m_props.checked])
+
     const handleClick = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
         setChecked(!checked)
     }
@@ -24,7 +28,7 @@ function CheckBox(props: CheckBoxProps) {
     const onChange = m_props.onChange
     useEffect(() => {
         if(onChange !== undefined) {
-            setChecked(checked)
+            onChange(checked)
         }
     }, [checked, onChange])
 

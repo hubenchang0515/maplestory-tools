@@ -12,6 +12,7 @@ interface ComboBoxProps {
     label?: string,
     placeholder?: string,
     selections?: ComboBoxSelection[],
+    current?: number
     onChange?: (v: any) => void,
 }
 
@@ -31,6 +32,16 @@ function ComboBox(props:ComboBoxProps): JSX.Element {
     const [value, setValue] = useState<any>(undefined)
     const [text, setText] = useState(m_props.placeholder)
     const [isShow, setShow] = useState(false)
+
+    const current = m_props.current
+    const selections = m_props.selections
+    useEffect(() => {
+        if(current !== undefined 
+            && selections !== undefined 
+            && current < selections.length) {
+            setValue(selections[current].value)
+        }
+    }, [current, selections])
 
     const handleClick = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
         setShow(!isShow)
