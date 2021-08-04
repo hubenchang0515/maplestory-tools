@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.js": "/maplestory-tools/static/js/main.b1448d25.chunk.js",
+    "main.js.map": "/maplestory-tools/static/js/main.b1448d25.chunk.js.map",
+    "runtime-main.js": "/maplestory-tools/static/js/runtime-main.0b849342.js",
+    "runtime-main.js.map": "/maplestory-tools/static/js/runtime-main.0b849342.js.map",
+    "static/js/2.98ad5cbb.chunk.js": "/maplestory-tools/static/js/2.98ad5cbb.chunk.js",
+    "static/js/2.98ad5cbb.chunk.js.map": "/maplestory-tools/static/js/2.98ad5cbb.chunk.js.map",
+    "static/js/3.4132a7fc.chunk.js": "/maplestory-tools/static/js/3.4132a7fc.chunk.js",
+    "static/js/3.4132a7fc.chunk.js.map": "/maplestory-tools/static/js/3.4132a7fc.chunk.js.map",
+    "index.html": "/maplestory-tools/index.html",
+    "static/js/2.98ad5cbb.chunk.js.LICENSE.txt": "/maplestory-tools/static/js/2.98ad5cbb.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.0b849342.js",
+    "static/js/2.98ad5cbb.chunk.js",
+    "static/js/main.b1448d25.chunk.js"
+  ]
+}
