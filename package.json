@@ -2,6 +2,7 @@
   "name": "maplestory-tools",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://github.com/hubenchang0515/maplestory-tools",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.2.2",
@@ -47,6 +48,8 @@
     "@types/jquery": "^3.5.5",
     "@types/react-router-dom": "^5.1.6",
     "@types/react-transition-group": "^4.4.0",
-    "@types/semantic-ui": "^2.2.7"
+    "@types/semantic-ui": "^2.2.7",
+    "gulp": "^3.9.1",
+    "gulp-cli": "^2.3.0"
   }
 }
