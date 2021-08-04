@@ -2,6 +2,11 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## 部署
+```bash
+git checkout --orphan gh-pages   # --orphan 使新分支没有提交历史，即为空分支
+```
+
 ## 一个暂未解决的问题
 由于 semantic-ui 的构建依赖问题，需要将 nodejs 的版本为 v11 且 gulp 的版本为 3.9
 

@@ -2,7 +2,7 @@
   "name": "maplestory-tools",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/hubenchang0515/maplestory-tools",
+  "homepage": "https://hubenchang0515.github.io/maplestory-tools/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.2.2",

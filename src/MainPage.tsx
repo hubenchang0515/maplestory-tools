@@ -1,4 +1,4 @@
-import {BrowserRouter, Route} from 'react-router-dom'
+import {Route, Link} from 'react-router-dom'
 import MysteryBadgeCalculator from './tool/MysteryBadgeCalculator'
 import CharmChipSimulator from './tool/CharmChipSimulator'
 
@@ -17,12 +17,12 @@ interface ToolNode {
 const toolsList: ToolNode[] = [
     {
         title: "神秘徽章计算器",
-        url: "/maplestory-tools/mystery-badge-calculator", 
+        url: "/mystery-badge-calculator", 
         component: MysteryBadgeCalculator
     },
     {
         title: "咒语痕迹模拟器",
-        url: "/maplestory-tools/charm-chip-simulator", 
+        url: "/charm-chip-simulator", 
         component: CharmChipSimulator
     },
 ]
@@ -34,15 +34,15 @@ function MainPage() {
             {
                 toolsList.map((item, index) => {
                     return (
-                        <a key={index} className="item" href={item.url}>
+                        <Link key={index} className="item" to={item.url}>
                             {item.title}
-                        </a>
+                        </Link>
                     )
                 })
             }
             </div>
             <div className="ui masthead vertical segment" style={articleStyle}>
-                <BrowserRouter>
+                
                 {
                     toolsList.map((item, index) => {
                         return (
@@ -50,7 +50,6 @@ function MainPage() {
                         )
                     })
                 }
-                </BrowserRouter>
             </div>
         </div>
     )
