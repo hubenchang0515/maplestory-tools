@@ -42,7 +42,6 @@ function MainPage() {
             }
             </div>
             <div className="ui masthead vertical segment" style={articleStyle}>
-                
                 {
                     toolsList.map((item, index) => {
                         return (
