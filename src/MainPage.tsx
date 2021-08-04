@@ -16,12 +16,12 @@ interface ToolNode {
 // 映射表
 const toolsList: ToolNode[] = [
     {
-        title: "神秘计算器",
+        title: "神秘徽章计算器",
         url: "/mystery-badge-calculator", 
         component: MysteryBadgeCalculator
     },
     {
-        title: "咒语模拟器",
+        title: "咒语痕迹模拟器",
         url: "/charm-chip-simulator", 
         component: CharmChipSimulator
     },
